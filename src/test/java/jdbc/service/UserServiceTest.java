@@ -6,14 +6,12 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class UserServiceTest {
-private final UserService userService = new UserServiceImpl();
+    private final UserService userService = new UserServiceImpl();
 
-private final String testName = "Michael";
-private final String testLastName = "Jones";
-private final byte testAge = 30;
+    private final String testName = "Michael";
+    private final String testLastName = "Jones";
+    private final byte testAge = 30;
 
     @Test
     public void dropUsersTable() {
