@@ -1,6 +1,5 @@
 package jdbc;
 
-import jdbc.model.User;
 import jdbc.service.UserService;
 import jdbc.service.UserServiceImpl;
 
@@ -14,10 +13,7 @@ public class Main {
         userService.saveUser("SomeNameThree", "SomeSurnameThree", (byte) 30);
         userService.saveUser("SomeNameFour", "SomeSurnameFour", (byte) 40);
 
-        System.out.println('\n' + "Получение всех пользователей:");
-        for (User user : userService.getAllUsers()) {
-            System.out.println(user);
-        }
+        userService.getAllUsers();
 
         userService.cleanUsersTable();
         userService.dropUsersTable();

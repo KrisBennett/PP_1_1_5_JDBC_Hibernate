@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getAllUsers() {
+        System.out.println('\n' + "Получение всех пользователей:");
         return userDaoHibernateImpl.getAllUsers();
     }
 

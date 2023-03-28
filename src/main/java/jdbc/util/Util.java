@@ -20,15 +20,14 @@ public class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "Vac/zto=.24q";
     private static final String DIALECT = "org.hibernate.dialect.MySQLDialect";
-    private Connection connection;
-    private SessionFactory sessionFactory;
 
     /**
      * Создание фабрики по производству сессий
      *
      * @return sessionFactory
      */
-    public SessionFactory getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
+        SessionFactory sessionFactory = null;
         try {
             Properties properties = new Properties();
 
@@ -60,14 +59,12 @@ public class Util {
      *
      * @return connection
      */
-    public Connection getConnection() {
-
+    public static Connection getConnection() {
+        Connection connection = null;
         try {
-            Driver driver = new Driver();
-            DriverManager.registerDriver(driver);
+            DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
-            System.out.println("провал");
             e.printStackTrace();
         }
         return connection;
